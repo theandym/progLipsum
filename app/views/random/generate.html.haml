@@ -1,6 +1,28 @@
+-content_for :javascript do
+	:javascript
+		$('.example_json').click(function() {
+			$('#string').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , “middle_initial” : “[[initial]]” , “address_1” : “[[street_number]] [[street_name]] [[street_type]]” }').keyup();
+			return false;
+		});
+		$('.example_ruby').click(function() {
+			$('#string').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => “[[initial]]”, :address_1 => “[[street_number]] [[street_name]] [[street_type]]”').keyup();
+			return false;
+		});
+		$('.example_xml').click(function() {
+			$('#string').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>").keyup();
+			return false;
+		});
+
 #main_entry
 	.content.clearfix
 		#main_entry_content
+			%span{:class => 'examples right'}
+				Try it out: 
+				= link_to 'JSON', nil, :class => 'example_json'
+				|
+				= link_to 'Ruby', nil, :class => 'example_ruby'
+				|
+				= link_to 'XML', nil, :class => 'example_xml'
 			%h3 Enter Format
 			/ = form_tag result_path, :remote => true do
 			= form_tag result_path do

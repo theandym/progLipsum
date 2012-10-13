@@ -219,11 +219,13 @@ body {}
 
 .random_generate #main {
 	#main_entry {
-		background-color:#03172B;
 		padding-top:40px;
 		padding-bottom:40px;
 		#main_entry_content {
-			
+			span.examples {
+				font-size:0.8em;
+				a { color:$font-color; }
+			}
 			textarea {
 				height:200px;
 				width:920px;
