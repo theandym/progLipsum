@@ -4,7 +4,12 @@ class RandomController < ApplicationController
   
   def result
     @entity_format = params[:string]
-    @number_of_entities = params[:number_of_entities].to_i
+    
+    if params[:number_of_entities].nil? || params[:number_of_entities] == ''
+      @number_of_entities = 1
+    else
+      @number_of_entities = params[:number_of_entities].to_i
+    end
     
     @array_of_first_names = ['Andy', 'Dave', 'Jeremy', 'Matt', 'Martin', 'Chris', 'Austin', 'Jonathan', 'Sam', 'Daniel']
     @array_of_last_names = ['Macdonald', 'Lee', 'Grieshop', 'Rector', 'Clark', 'Messer', 'Sanderson', 'Styles', 'Beckler', 'Brown']
@@ -21,7 +26,7 @@ class RandomController < ApplicationController
       @entities_with_data << @entity_format.gsub(regular_expression, map_variables_to_data)
       
       if @number_of_entities > 1
-        @entities_with_data << "\n"
+        @entities_with_data << "\n\n"
       end
     end
   end

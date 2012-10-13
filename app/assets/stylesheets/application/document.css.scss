@@ -6,11 +6,275 @@
 // Document styles
 //-----------------------------------------
 
-html {}
+///////////////////////
+///////////////////////
+//// Shared Styles ////
+///////////////////////
+///////////////////////
+
+/////////////////
+// Base Styles //
+/////////////////
+
+html {
+	background-color:#03172B;
+	color:$font-color;
+	font-family:$font-family;
+	font-size:$font-size;
+	line-height:$line-height;
+	-webkit-font-smoothing:antialiased;
+}
+
+/*h1, h2, h3, h4, h5, h6 { color:#333; }*/
+
+h1 {
+	font-size:1.6em;
+	margin-bottom:10px;
+}
+
+h2 {
+	font-size:1.4em;
+	margin-bottom:15px;
+}
+
+h3 {
+	font-size:1.2em;
+	margin-bottom:10px;
+}
+
+h4 {
+	font-size:1em;
+	margin-bottom:5px;
+}
+
+h5 {
+	font-size:0.9em;
+	margin:0 auto 5px;
+}
+
+h6 {
+	font-size:0.8em;
+	margin-bottom:3px;
+}
+
+hr {
+	background-color:#fff;
+	border:none;
+	display:block;
+	height:1px;
+}
+
+.left { float:left; }
+.right { float:right; }
+
+
+////////////
+// Tables //
+////////////
+
+
+///////////
+// Flash //
+///////////
+
+
+///////////
+// Forms //
+///////////
+
+form {}
+input, textarea, select {
+	display:inline-block;
+	outline:none;
+}
+input, textarea {
+	background:#fff;
+	border:none;
+	@include border-radius(3px);
+	color:#204666;
+	margin:10px auto;
+	padding:10px;
+}
+input[type="text"], input[type="email"], input[type="password"], textarea { background:#eee; }
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus { background:#fff; }
+
+
+/////////////
+// Buttons //
+/////////////
+
+.button, a.button, input[type="submit"] {
+	background-color:#fff;
+	border:2px solid #fff;
+	@include border-radius(3px);
+	color:#112437;
+	display:inline-block;
+	font-size:0.8em;
+	-webkit-font-smoothing:antialiased;
+	font-weight:bold;
+	margin-left:0;
+	margin-right:5px;
+	padding:9px 15px 8px;
+	text-decoration:none;
+}
+
+input[type="submit"] { padding:10px 15px; }
+
+.button.right, a.button.right, input[type="submit"].right {
+	margin-left:5px;
+	margin-right:0;
+}
+
+.button:hover, .button:active, a.button:hover, a.button:active, input[type="submit"]:hover, input[type="submit"]:active {
+	background-color:#03172B;
+	border-color:#fff;
+	color:#fff;
+}
+
+.button.orange, a.button.orange, input[type="submit"].orange {
+	background-color:#F15A29;
+	border-color:#F15A29;
+}
+.button:hover.orange, .button:active.orange, a.button:hover.orange, a.button:active.orange, input[type="submit"]:hover.orange, input[type="submit"]:active.orange {
+	background-color:#03172B;
+	color:#F15A29;
+}
+
+.button.green, a.button.green, input[type="submit"].green {
+	background-color:#ADC32B;
+	border-color:#ADC32B;
+}
+.button:hover.green, .button:active.green, a.button:hover.green, a.button:active.green, input[type="submit"]:hover.green, input[type="submit"]:active.green {
+	background-color:#03172B;
+	color:#ADC32B;
+}
+
+.button.blue, a.button.blue, input[type="submit"].blue {
+	background-color:#00AEEF;
+	border-color:#00AEEF;
+}
+.button:hover.blue, .button:active.blue, a.button:hover.blue, a.button:active.blue, input[type="submit"]:hover.blue, input[type="submit"]:active.blue {
+	background-color:#03172B;
+	color:#00AEEF;
+}
+
+
+//////////
+// Misc //
+//////////
+
+
+////////////
+// Layout //
+////////////
+
 body {}
 
+#container {}
 
-textarea {
-	height:200px;
-	width:600px;
+#header {
+	background-color:#fff;
+	
+	padding-top:10px;
+	padding-bottom:15px;
+	vertical-align:middle;
+	#header_name {
+		font-size:1.4em;
+		font-weight:0;
+		letter-spacing:0.1em;
+		a {
+			color:#03172B;
+			display:inline;
+			text-decoration:none;
+		}
+		span {
+			font-weight:bold;
+		}
+	}
+	#header_name:hover {
+		a { color:#F15A29; }
+	}
+}
+
+#main {
+	#main_content {}
+}
+
+#footer {
+	font-size:0.85em;
+	margin-top:20px;
+	margin-bottom:40px;
+}
+
+
+//////////////////////////////
+//////////////////////////////
+//// Page Specific Styles ////
+//////////////////////////////
+//////////////////////////////
+
+///////////////
+//// Index ////
+///////////////
+
+.random_generate #main {
+	#main_entry {
+		background-color:#03172B;
+		padding-top:40px;
+		padding-bottom:40px;
+		#main_entry_content {
+			
+			textarea {
+				height:200px;
+				width:920px;
+			}
+			input[type="text"] {
+				font-weight:bold;
+				text-align:center;
+			}
+			label { margin-left:10px; }
+		}
+	}
+	#main_options {
+		background-color:#112437;
+		#main_options_content {
+			font-size:0.9em;
+			padding-top:20px;
+			padding-bottom:20px;
+			ul {
+				padding:0;
+				li {
+					span { text-decoration:underline; }
+					ul {
+						padding-left:15px;
+						li {
+							span {
+								font-style:italic;
+								text-decoration:none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/////////////////
+//// Results ////
+/////////////////
+
+.random_result #main {
+	#main_result {
+		background-color:#03172B;
+		padding-top:40px;
+		padding-bottom:40px;
+		#main_result_content {
+			textarea {
+				height:400px;
+				width:920px;
+			}
+		}
+	}
 }

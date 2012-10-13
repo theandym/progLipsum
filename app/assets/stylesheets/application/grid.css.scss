@@ -1,0 +1,40 @@
+@import "960/grid";
+
+
+///////////////
+// Base Grid //
+///////////////
+
+.content { @include grid-system(16); }
+
+#header {
+	#header_name { @include grid(4,16); }
+	#header_nav { @include grid(6,16); }
+	#header_meta { @include grid(6,16); }
+}
+
+#main {}
+
+#footer {
+	#footer_copyright { @include grid(8,16); }
+	#footer_links { @include grid(8,16); }
+}
+
+
+///////////
+// Index //
+///////////
+
+.random_generate #main { 
+	#main_entry_content { @include grid(16,16); }
+	#main_options_content { @include grid(16,16); }
+}
+
+
+///////////
+// Result //
+///////////
+
+.random_result #main { 
+	#main_result_content { @include grid(16,16); }
+}

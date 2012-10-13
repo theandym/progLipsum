@@ -58,8 +58,7 @@ Railsrumble2012::Application.routes.draw do
   
   ###
   
-  match '/generate' => 'random#generate'
   match '/result' => 'random#result'
   
-  root :to => "pages#index"
+  root :to => "random#generate"
 end

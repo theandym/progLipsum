@@ -1,6 +1,44 @@
-/ = form_tag result_path, :remote => true do
-= form_tag result_path do
-	= text_area_tag :string, nil, :placeholder => 'Enter content format here...'
-	%br
-	= text_field_tag :number_of_entities, nil
-	= submit_tag 'Generate!', :class => "button green"
+#main_entry
+	.content.clearfix
+		#main_entry_content
+			%h3 Enter Format
+			/ = form_tag result_path, :remote => true do
+			= form_tag result_path do
+				= text_area_tag :string, nil, :placeholder => 'Enter content format here...'
+				%br
+				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '1'
+				= label_tag :number_of_entities, '# of Entries'
+				= submit_tag 'Generate!', :class => "button orange right"
+
+#main_options
+	.content.clearfix
+		#main_options_content
+			%h2 Variables
+			#main_content_options_col_1
+				%ul
+					%li
+						%span Names
+						%ul
+							%li
+								[[name_first]] - 
+								%span ex. John
+							%li
+								[[name_last]] - 
+								%span ex. Smith
+							%li
+								[[initial]] - 
+								%span ex. M
+					%li
+						%span Addresses
+						%ul
+							%li
+								[[street_number]] - 
+								%span ex. 123
+							%li
+								[[street_name]] - 
+								%span ex. Maple
+							%li
+								[[street_type]] - 
+								%span ex. St
+			#main_content_options_col_2
+			
