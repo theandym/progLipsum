@@ -1,0 +1,6 @@
+/ = form_tag result_path, :remote => true do
+= form_tag result_path do
+	= text_area_tag :string, nil, :placeholder => 'Enter content format here...'
+	%br
+	= text_field_tag :number_of_entities, nil
+	= submit_tag 'Generate!', :class => "button green"
