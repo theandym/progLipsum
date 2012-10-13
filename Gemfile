@@ -39,9 +39,25 @@ gem 'jquery-rails'
 
 ###
 
+# Deployment
 gem 'capistrano'
 
 group :production do
   gem 'mysql2' # If using mysql in development, this can be outside the production group.
   gem 'therubyracer'
 end
+
+# Server
+gem 'thin'
+
+# Html5 for Rails - https://github.com/sporkd/html5-rails
+group :assets do
+  gem 'compass-rails'
+  gem 'compass-h5bp'
+end
+
+gem 'haml-rails'
+gem 'html5-rails'
+
+# 960 Grid System Compass Plugin - https://github.com/nextmat/compass-960-plugin
+gem 'compass-960-plugin'
