@@ -58,6 +58,8 @@ Railsrumble2012::Application.routes.draw do
   
   ###
   
+  devise_for :accounts
+  
   resources :datasets do
     collection do
       post 'preview'

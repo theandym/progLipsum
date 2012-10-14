@@ -69,4 +69,7 @@ Railsrumble2012::Application.configure do
   
   # HTML5-Rails
   config.assets.precompile += ['polyfills.js']
+  
+  # Devise
+  config.action_mailer.default_url_options = { :host => 'proglipsum.com' }
 end

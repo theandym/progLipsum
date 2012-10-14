@@ -64,3 +64,6 @@ gem 'compass-960-plugin'
 
 # Navigation
 gem 'simple-navigation'
+
+# Authentication
+gem 'devise'
