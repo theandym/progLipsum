@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DatasetControllerTest < ActionController::TestCase
+class DatasetsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

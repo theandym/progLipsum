@@ -1,4 +1,4 @@
-class DatasetController < ApplicationController
+class DatasetsController < ApplicationController
   def new
   end
   

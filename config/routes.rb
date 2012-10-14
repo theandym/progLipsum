@@ -58,7 +58,7 @@ Railsrumble2012::Application.routes.draw do
   
   ###
   
-  match '/preview' => 'dataset#preview'
+  match '/preview' => 'datasets#preview'
   
-  root :to => "dataset#new"
+  root :to => "datasets#new"
 end

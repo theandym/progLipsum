@@ -19,11 +19,11 @@
 }
 
 
-///////////////////
-// Dataset > New //
-///////////////////
+////////////////////
+// Datasets > New //
+////////////////////
 
-.dataset_new {
+.datasets_new {
 	#main_entry { 
 		#main_entry_content { @include grid(16,16); }
 		#main_options_content { @include grid(16,16); }
@@ -44,10 +44,10 @@
 }
 
 
-///////////////////////
-// Dataset > Preview //
-///////////////////////
+////////////////////////
+// Datasets > Preview //
+////////////////////////
 
-.dataset_preview #main { 
+.datasets_preview #main { 
 	#main_result_content { @include grid(16,16); }
 }
