@@ -68,7 +68,7 @@ a:hover, a:active { text-decoration:none; }
 
 .left { float:left; }
 .right { float:right; }
-
+.center { text-align:center; }
 
 ////////////
 // Tables //
@@ -269,6 +269,43 @@ body {}
 //////////////////////////////
 //////////////////////////////
 
+//////////////////////////
+//// Datasets > Index ////
+//////////////////////////
+
+.datasets_index #main {
+	#main_index {
+		table {
+			tr {
+				th, td {
+					border:1px solid #112437;
+					padding:5px 8px;
+				}
+				th {
+					font-size:0.7em;
+					text-transform:uppercase;
+				}
+				th.name, td.name { width:250px; }
+				th.format, td.format { width:600px; }
+				td.format {
+					font-family:monospace;
+					vertical-align:middle;
+				}
+				th.delete, td.delete {
+					text-align:center;
+					width:40px;
+					.button {
+						margin:0;
+						padding:2px 5px;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+
 ////////////////////////
 //// Datasets > New ////
 ////////////////////////
@@ -345,6 +382,20 @@ body {}
 				background-color:#aaa;
 				height:300px;
 			}
+		}
+	}
+}
+
+
+//////////////////////////
+//// Datasets > Index ////
+//////////////////////////
+
+.datasets_show #main {
+	#main_show {
+		textarea {
+			height:200px;
+			width:920px;
 		}
 	}
 }

@@ -1,4 +1,8 @@
 class DatasetsController < ApplicationController
+  def index
+    @datasets = current_account.datasets.all
+  end
+  
   def new
     @dataset = Dataset.new
     
@@ -60,14 +64,27 @@ class DatasetsController < ApplicationController
   
   def create
     @dataset = Dataset.new(params[:dataset])
-    # @dataset.account_id = current_user.account.id
+    @dataset.account_id = current_account.id
     
     @object = @dataset
     
     if @dataset.save
-      redirect_to new_dataset_path, :notice => 'Save successful!'
+      redirect_to datasets_path, :notice => 'Save successful!'
     else
       render :preview
+    end
+  end
+  
+  def show
+    @dataset = current_account.datasets.find(params[:id])
+  end
+  
+  def destroy
+    @dataset = current_account.datasets.find(params[:id])
+    @dataset.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to(datasets_url) }
     end
   end
 end

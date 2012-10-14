@@ -6,21 +6,34 @@
 		  $(this).unselect();
 		});
 
-#main_result
-	.content.clearfix
+#main_result.clearfix
+	.content
 		#main_result_content
-			/ = link_to 'Back', root_path, :class => 'button green right'
-			
-			/ = text_area_tag nil, @entities_with_data, :readonly => true
 			%h2 New Dataset
-			= form_for @dataset do |f|
-				= f.label :format, 'Input Format'
-				= f.text_area :format
-				= f.label :output, 'Output Data'
-				= f.text_area :output, :readonly => true
-				= f.label :name, 'Name'
-				= f.text_field :name, :size => 30, :placeholder => 'My Dataset'
-				/ = label_tag :number_of_entities, '# of Entries'
-				= submit_tag 'Save', :class => "button orange right"
+			- if account_signed_in?
+				= form_for @dataset do |f|
+					= f.label :format, 'Input Format'
+					= f.text_area :format
+					= f.label :output, 'Output Data'
+					= f.text_area :output, :readonly => true
+					= f.label :name, 'Name'
+					= f.text_field :name, :size => 30, :placeholder => 'My Dataset'
+					/ = label_tag :number_of_entities, '# of Entries'
+					= submit_tag 'Save', :class => "button orange right"
+			- else
+				%label Input Format
+				= text_area_tag nil, @dataset.format, :readonly => true, :id => 'dataset_format'
+				%label Output Data
+				= text_area_tag nil, @dataset.output, :readonly => true, :id => 'dataset_output'
+				
+				%br
+				%br
+				
+				%p
+					To save a dataset,
+					= link_to 'log in', new_account_session_path
+					or
+					= link_to 'sign up', new_account_registration_path
+					\. 
 			
 		.clearfix

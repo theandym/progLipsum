@@ -26,6 +26,17 @@
 }
 
 
+//////////////////////
+// Datasets > Index //
+//////////////////////
+
+.datasets_index {
+	#main_index { 
+		#main_index_content { @include grid(16,16); }
+	}
+}
+
+
 ////////////////////
 // Datasets > New //
 ////////////////////
@@ -66,4 +77,15 @@
 
 #devise {
 	#devise_content { @include grid(16,16); }
+}
+
+
+/////////////////////
+// Datasets > Show //
+/////////////////////
+
+.datasets_show {
+	#main_show { 
+		#main_show_content { @include grid(16,16); }
+	}
 }

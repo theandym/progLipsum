@@ -1,4 +1,6 @@
 class Account < ActiveRecord::Base
+  has_many :datasets, :dependent => :destroy
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
