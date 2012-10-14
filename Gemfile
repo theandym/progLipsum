@@ -61,3 +61,6 @@ gem 'html5-rails'
 
 # 960 Grid System Compass Plugin - https://github.com/nextmat/compass-960-plugin
 gem 'compass-960-plugin'
+
+# Navigation
+gem 'simple-navigation'
