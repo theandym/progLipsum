@@ -58,7 +58,7 @@ Railsrumble2012::Application.routes.draw do
   
   ###
   
-  match '/result' => 'random#result'
+  match '/preview' => 'dataset#preview'
   
-  root :to => "random#generate"
+  root :to => "dataset#new"
 end

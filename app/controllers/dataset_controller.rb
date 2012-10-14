@@ -1,8 +1,8 @@
-class RandomController < ApplicationController
-  def generate
+class DatasetController < ApplicationController
+  def new
   end
   
-  def result
+  def preview
     @entity_format = params[:string]
     
     if params[:number_of_entities].nil? || params[:number_of_entities] == ''

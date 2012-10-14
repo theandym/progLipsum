@@ -19,11 +19,11 @@
 }
 
 
-///////////
-// Index //
-///////////
+///////////////////
+// Dataset > New //
+///////////////////
 
-.random_generate {
+.dataset_new {
 	#main_entry { 
 		#main_entry_content { @include grid(16,16); }
 		#main_options_content { @include grid(16,16); }
@@ -44,10 +44,10 @@
 }
 
 
-///////////
-// Result //
-///////////
+///////////////////////
+// Dataset > Preview //
+///////////////////////
 
-.random_result #main { 
+.dataset_preview #main { 
 	#main_result_content { @include grid(16,16); }
 }

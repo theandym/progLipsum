@@ -25,7 +25,7 @@
 				= link_to 'XML', nil, :class => 'example_xml'
 			%h2 Data Format
 			/ = form_tag result_path, :remote => true do
-			= form_tag result_path do
+			= form_tag preview_path do
 				= text_area_tag :string, nil, :placeholder => 'ex. Hi, my name is [[name_first]]...'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '1'
 				= label_tag :number_of_entities, '# of Entries'

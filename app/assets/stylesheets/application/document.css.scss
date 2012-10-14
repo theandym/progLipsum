@@ -221,11 +221,11 @@ body {}
 //////////////////////////////
 //////////////////////////////
 
-///////////////
-//// Index ////
-///////////////
+///////////////////////
+//// Dataset > New ////
+///////////////////////
 
-.random_generate #main {
+.dataset_new #main {
 	#main_entry {
 		padding-top:40px;
 		padding-bottom:40px;
@@ -276,11 +276,11 @@ body {}
 }
 
 
-/////////////////
-//// Results ////
-/////////////////
+///////////////////////////
+//// Dataset > Preview ////
+///////////////////////////
 
-.random_result #main {
+.dataset_preview #main {
 	#main_result {
 		background-color:#03172B;
 		padding-top:40px;
