@@ -9,18 +9,13 @@
 
 #header {
 	#header_content {
-		@include grid(16,16);
-		#header_name {
-			@include grid(3,16);
-			@include alpha;
-		}
+		#header_name { @include grid(3,16); }
+		#header_nav { @include grid(13,16); }
 	}
 }
 
 .flash {
-	.flash_content {
-		@include grid(16,16);
-	}
+	.flash_content { @include grid(16,16); }
 }
 
 #main {}

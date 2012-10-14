@@ -187,6 +187,7 @@ body {}
 			font-size:1.4em;
 			font-weight:0;
 			letter-spacing:0.1em;
+			margin-bottom:5px;
 			a {
 				color:#03172B;
 				display:inline;
@@ -202,12 +203,6 @@ body {}
 		}
 		#header_name:hover {
 			a { color:#F15A29; }
-		}
-		#header_tagline {
-			color:#ddd;
-			display:inline;
-			margin-top:3px;
-			text-align:right;
 		}
 	}
 }

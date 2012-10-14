@@ -1,9 +1,9 @@
-%header#header
-	#header_name
-		= link_to 'prog', root_path
-		%span><=  link_to content_tag(:span, 'Lipsum'), root_path
-		/ prog
-		/ %span><Lipsum
-		%h6 Dead Simple Test Data
-	.clearfix
-
+%header
+	#header.clearfix
+		.content
+			#header_content
+				#header_name
+					= link_to 'prog', root_path
+					%span><=  link_to content_tag(:span, 'Lipsum'), root_path
+					%h6 Dead Simple Test Data
+				#header_nav

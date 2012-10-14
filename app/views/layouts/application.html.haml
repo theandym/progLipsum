@@ -6,21 +6,14 @@
 	%body{ :class => "#{ controller.controller_name }_#{ controller.action_name }" }
 		= render "chromeframe"
 		#container
-			%header
-				#header
-					.content.clearfix
-						#header_content
-							= render "header"
-			
+			= render "header"
 			= render "flashes"
+			
 			#main{ :role => "main" }
 				#main_content
 					= yield
 			
-			%footer
-				#footer
-					.content.clearfix
-						= render "footer"
+			= render "footer"
 		
 		-# Javascript at the bottom for fast page loading
 		= render "javascripts"

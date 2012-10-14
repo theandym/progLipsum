@@ -1,14 +1,14 @@
 - if flash.any?
 	- flash.each do |key, value|
-		.flash{ :title => key.to_s.humanize, :class => key }
-			.content.clearfix
+		.flash.clearfix{ :title => key.to_s.humanize, :class => key }
+			.content
 				.flash_content
 					.flash_content_message
 						%span= value
 
-- if @object.errors.any?
-	.flash.error
-		.content.clearfix
+- if @object != nil && @object.errors.any?
+	.flash.clearfix.error
+		.content
 			.flash_content
 				.flash_content_message
 					Oops! Will you fix the
