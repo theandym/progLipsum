@@ -39,6 +39,7 @@ class DatasetsController < ApplicationController
         "[[name_first]]" => @array_of_first_names.sample,
         "[[name_last]]" => @array_of_last_names.sample,
         "[[initial]]" => @array_of_initials.sample,
+        "[[email_address]]" => "#{@array_of_first_names.sample.downcase}@#{@array_of_last_names.sample.downcase}.com",
         "[[street_number]]" => @array_of_street_numbers.sample,
         "[[street_name]]" => @array_of_street_names.sample,
         "[[street_type]]" => @array_of_street_types.sample,
