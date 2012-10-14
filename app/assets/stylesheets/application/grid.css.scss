@@ -8,7 +8,19 @@
 .content { @include grid-system(16); }
 
 #header {
-	#header_name { @include grid(3,16); }
+	#header_content {
+		@include grid(16,16);
+		#header_name {
+			@include grid(3,16);
+			@include alpha;
+		}
+	}
+}
+
+.flash {
+	.flash_content {
+		@include grid(16,16);
+	}
 }
 
 #main {}
@@ -44,10 +56,10 @@
 }
 
 
-////////////////////////
-// Datasets > Preview //
-////////////////////////
+/////////////////////////////////
+// Datasets > Preview / Create //
+/////////////////////////////////
 
-.datasets_preview #main { 
+.datasets_preview #main, .datasets_create #main { 
 	#main_result_content { @include grid(16,16); }
 }

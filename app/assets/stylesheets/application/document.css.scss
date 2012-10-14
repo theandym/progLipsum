@@ -82,6 +82,7 @@ hr {
 ///////////
 
 form {}
+label { margin-right:10px; }
 input, textarea, select {
 	display:inline-block;
 	outline:none;
@@ -96,6 +97,11 @@ input, textarea {
 }
 input[type="text"], input[type="email"], input[type="password"], textarea { background:#eee; }
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus { background:#fff; }
+
+.field_with_errors {
+	display:inline;
+	input, textarea { border:3px solid #F15A29; }
+}
 
 
 /////////////
@@ -173,36 +179,49 @@ body {}
 
 #header {
 	background-color:#fff;
-	padding-top:7px;
-	padding-bottom:7px;
-	vertical-align:middle;
-	#header_name {
-		font-size:1.4em;
-		font-weight:0;
-		letter-spacing:0.1em;
-		a {
-			color:#03172B;
+	#header_content {
+		padding-top:7px;
+		padding-bottom:7px;
+		vertical-align:middle;
+		#header_name {
+			font-size:1.4em;
+			font-weight:0;
+			letter-spacing:0.1em;
+			a {
+				color:#03172B;
+				display:inline;
+				text-decoration:none;
+			}
+			span { font-weight:bold; }
+			h6 {
+				color:#ccc;
+				font-size:0.6em;
+				font-style:italic;
+				letter-spacing:0;
+			}
+		}
+		#header_name:hover {
+			a { color:#F15A29; }
+		}
+		#header_tagline {
+			color:#ddd;
 			display:inline;
-			text-decoration:none;
+			margin-top:3px;
+			text-align:right;
 		}
-		span { font-weight:bold; }
-		h6 {
-			color:#ccc;
-			font-size:0.6em;
-			font-style:italic;
-			letter-spacing:0;
-		}
-	}
-	#header_name:hover {
-		a { color:#F15A29; }
-	}
-	#header_tagline {
-		color:#ddd;
-		display:inline;
-		margin-top:3px;
-		text-align:right;
 	}
 }
+
+.flash {
+	.flash_content {
+		color:#fff;
+		font-size:0.9em;
+		padding:10px 0;
+		text-align:center;
+	}
+}
+.flash.notice { background-color:#ADC32B; }
+.flash.error { background-color:#F15A29; }
 
 #main {
 	#main_content {}
@@ -259,13 +278,17 @@ body {}
 					ul {
 						padding-left:15px;
 						li {
+							font-family:monospace;
+							font-size:1.2em;
 							line-height:1.6em;
 							span {
 								color:#999;
-								font-size:0.8em;
+								font-family:Helvetica, Arial, sans-serif;
+								font-size:0.7em;
 								font-style:italic;
 								margin-left:8px;
 								text-decoration:none;
+								vertical-align:middle;
 							}
 						}
 					}
@@ -276,11 +299,11 @@ body {}
 }
 
 
-////////////////////////////
-//// Datasets > Preview ////
-////////////////////////////
+/////////////////////////////////////
+//// Datasets > Preview / Create ////
+/////////////////////////////////////
 
-.datasets_preview #main {
+.datasets_preview #main, .datasets_create #main {
 	#main_result {
 		background-color:#03172B;
 		padding-top:40px;
@@ -288,8 +311,13 @@ body {}
 		#main_result_content {
 			textarea {
 				font-family:monospace;
-				height:400px;
+				margin-bottom:20px;
 				width:920px;
+			}
+			#dataset_format { height:150px; }
+			#dataset_output {
+				background-color:#aaa;
+				height:300px;
 			}
 		}
 	}

@@ -1,12 +1,20 @@
 class DatasetsController < ApplicationController
   def new
+    @dataset = Dataset.new
+    
+    @object = @dataset
   end
   
   def preview
-    @entity_format = params[:string]
+    @dataset = Dataset.new(params[:dataset])
+    if @dataset.format == nil || @dataset.format.empty?
+      redirect_to new_dataset_path, :flash => { :error => 'Please enter your desired data format...' }
+    end
+    
+    @object = @dataset
     
     if params[:number_of_entities].nil? || params[:number_of_entities] == ''
-      @number_of_entities = 1
+      @number_of_entities = 10
     else
       @number_of_entities = params[:number_of_entities].to_i
     end
@@ -20,7 +28,7 @@ class DatasetsController < ApplicationController
     @array_of_street_types = ["St", "Rd", "Cir", "Ct", "Way", "Ave"]
     @array_of_cities = ["Beijing", "Bogota", "Buenos Aires", "Cairo", "Delhi", "Dhaka", "Guangzhou", "Istanbul", "Jakarta", "Karachi", "Kinshasa", "Kolkata", "Lagos", "Lima", "London", "Los Angeles", "Manila", "Mexico City", "Moscow", "Mumbai", "New York City", "Osaka", "Rio de Janeiro", "Sao Paulo", "Seoul", "Shanghai", "Shenzhen", "Tehran", "Tianjin", "Tokyo"]
     
-    @entities_with_data = ''
+    @dataset.output = ''
     
     @number_of_entities.times do
       map_variables_to_data = {
@@ -42,11 +50,24 @@ class DatasetsController < ApplicationController
       }
       regular_expression = Regexp.union(map_variables_to_data.keys)
       
-      @entities_with_data << @entity_format.gsub(regular_expression, map_variables_to_data)
+      @dataset.output << @dataset.format.gsub(regular_expression, map_variables_to_data)
       
       if @number_of_entities > 1
-        @entities_with_data << "\n\n"
+        @dataset.output << "\n\n"
       end
+    end
+  end
+  
+  def create
+    @dataset = Dataset.new(params[:dataset])
+    # @dataset.account_id = current_user.account.id
+    
+    @object = @dataset
+    
+    if @dataset.save
+      redirect_to new_dataset_path, :notice => 'Save successful!'
+    else
+      render :preview
     end
   end
 end

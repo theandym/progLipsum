@@ -1,6 +1,6 @@
 -content_for :javascript do
 	:javascript
-		$('textarea').toggle(function() {
+		$('#dataset_output').toggle(function() {
 		  $(this).select();
 		}, function() {
 		  $(this).unselect();
@@ -9,7 +9,18 @@
 #main_result
 	.content.clearfix
 		#main_result_content
-			= link_to 'Back', root_path, :class => 'button green right'
-			%h2 Result
-			= text_area_tag nil, @entities_with_data, :readonly => true
+			/ = link_to 'Back', root_path, :class => 'button green right'
+			
+			/ = text_area_tag nil, @entities_with_data, :readonly => true
+			%h2 New Dataset
+			= form_for @dataset do |f|
+				= f.label :format, 'Input Format'
+				= f.text_area :format
+				= f.label :output, 'Output Data'
+				= f.text_area :output, :readonly => true
+				= f.label :name, 'Name'
+				= f.text_field :name, :size => 30, :placeholder => 'My Dataset'
+				/ = label_tag :number_of_entities, '# of Entries'
+				= submit_tag 'Save', :class => "button orange right"
+			
 		.clearfix

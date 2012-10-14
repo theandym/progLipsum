@@ -4,16 +4,17 @@
 	= render "head"
 	
 	%body{ :class => "#{ controller.controller_name }_#{ controller.action_name }" }
+		= render "chromeframe"
 		#container
 			%header
 				#header
 					.content.clearfix
-						= render "chromeframe"
-						= render "header"
+						#header_content
+							= render "header"
 			
+			= render "flashes"
 			#main{ :role => "main" }
 				#main_content
-					= render "flashes"
 					= yield
 			
 			%footer

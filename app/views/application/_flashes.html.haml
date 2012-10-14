@@ -1,0 +1,19 @@
+- if flash.any?
+	- flash.each do |key, value|
+		.flash{ :title => key.to_s.humanize, :class => key }
+			.content.clearfix
+				.flash_content
+					.flash_content_message
+						%span= value
+
+- if @object.errors.any?
+	.flash.error
+		.content.clearfix
+			.flash_content
+				.flash_content_message
+					Oops! Will you fix the
+					- if @object.errors.count > 1
+						fields
+					- else
+						field
+					in error below?

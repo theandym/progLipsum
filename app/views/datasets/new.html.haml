@@ -1,15 +1,17 @@
 -content_for :javascript do
 	:javascript
 		$('.example_json').click(function() {
-			$('#string').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , "middle_initial" : "[[initial]]" , "address_1" : "[[street_number]] [[street_name]] [[street_type]]" , "ssn" : "[[number_9_digit]]" }').keyup();
+			$('#dataset_format').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , "middle_initial" : "[[initial]]" , "address_1" : "[[street_number]] [[street_name]] [[street_type]]" , "ssn" : "[[number_9_digit]]" }').keyup();
 			return false;
 		});
+		
 		$('.example_ruby').click(function() {
-			$('#string').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => "[[initial]]", :address_1 => "[[street_number]] [[street_name]] [[street_type]]", :ssn => "[[number_9_digit]]"').keyup();
+			$('#dataset_format').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => "[[initial]]", :address_1 => "[[street_number]] [[street_name]] [[street_type]]", :ssn => "[[number_9_digit]]"').keyup();
 			return false;
 		});
+		
 		$('.example_xml').click(function() {
-			$('#string').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>\n<ssn>[[number_9_digit]]</ssn>").keyup();
+			$('#dataset_format').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>\n<ssn>[[number_9_digit]]</ssn>").keyup();
 			return false;
 		});
 
@@ -24,12 +26,11 @@
 				|
 				= link_to 'XML', nil, :class => 'example_xml'
 			%h2 Data Format
-			/ = form_tag result_path, :remote => true do
-			= form_tag preview_datasets_path do
-				= text_area_tag :string, nil, :placeholder => 'ex. Hi, my name is [[name_first]]...'
-				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '1'
+			= form_for @dataset, :url => preview_datasets_path do |f|
+				= f.text_area :format, :placeholder => 'ex. Hi, my name is [[name_first]]...'
+				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '10'
 				= label_tag :number_of_entities, '# of Entries'
-				= submit_tag 'Generate!', :class => "button orange right"
+				= submit_tag 'Generate', :class => "button orange right"
 		.clearfix
 
 #main_options
