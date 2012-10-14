@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require h5bp
 
+$(window).load(function() {
+	
+	/////////// 
+	// Flash //
+	///////////
+	
+	// Close the flash
+	
+	setTimeout(function() {
+		$(".flash.notice").fadeOut('fast'); 
+	}, 5000);
+	
+	
+});

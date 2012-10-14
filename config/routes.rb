@@ -60,6 +60,15 @@ Railsrumble2012::Application.routes.draw do
   
   devise_for :accounts
   
+  devise_for :accounts, :path_names => {
+    :sign_in => 'login',
+    :sign_out => 'logout',
+    :confirmation => 'verification',
+    :registration => 'register',
+    :sign_up => 'signup' 
+  }
+  
+  
   resources :datasets do
     collection do
       post 'preview'

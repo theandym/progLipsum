@@ -58,3 +58,12 @@
 .datasets_preview #main, .datasets_create #main { 
 	#main_result_content { @include grid(16,16); }
 }
+
+
+/////////////////////////////////
+// Datasets > Preview / Create //
+/////////////////////////////////
+
+#devise {
+	#devise_content { @include grid(16,16); }
+}

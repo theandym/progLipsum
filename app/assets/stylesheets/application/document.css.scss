@@ -63,6 +63,9 @@ hr {
 	height:1px;
 }
 
+a:link, a:visited, a:hover, a:active { color:$font-color; }
+a:hover, a:active { text-decoration:none; }
+
 .left { float:left; }
 .right { float:right; }
 
@@ -75,6 +78,17 @@ hr {
 ///////////
 // Flash //
 ///////////
+
+.flash {
+	.flash_content {
+		color:#fff;
+		font-size:0.9em;
+		padding:10px 0;
+		text-align:center;
+	}
+}
+.flash.notice { background-color:#779444; }
+.flash.alert, .flash.error { background-color:#F15A29; }
 
 
 ///////////
@@ -146,12 +160,12 @@ input[type="submit"] { padding:10px 15px; }
 }
 
 .button.green, a.button.green, input[type="submit"].green {
-	background-color:#ADC32B;
-	border-color:#ADC32B;
+	background-color:#779444;
+	border-color:#779444;
 }
 .button:hover.green, .button:active.green, a.button:hover.green, a.button:active.green, input[type="submit"]:hover.green, input[type="submit"]:active.green {
 	background-color:#03172B;
-	color:#ADC32B;
+	color:#779444;
 }
 
 .button.blue, a.button.blue, input[type="submit"].blue {
@@ -204,22 +218,42 @@ body {}
 		#header_name:hover {
 			a { color:#F15A29; }
 		}
+		#header_nav {
+			font-size:0.9em;
+			text-align:right;
+			vertical-align:middle;
+			ul {
+				list-style-type:none;
+				margin:7px 0 0;
+				li {
+					display:inline;
+					margin-left:15px;
+					a {
+						background-color:#F15A29;
+						border:2px solid #F15A29;
+						@include border-radius(3px);
+						color:#fff;
+						display:inline-block;
+						font-size:0.8em;
+						font-weight:bold;
+						padding:4px 8px;
+						text-decoration:none;
+					}
+					a:hover, a:active {
+						background-color:#fff;
+						color:#F15A29;
+					}
+				}
+			}
+		}
 	}
 }
-
-.flash {
-	.flash_content {
-		color:#fff;
-		font-size:0.9em;
-		padding:10px 0;
-		text-align:center;
-	}
-}
-.flash.notice { background-color:#ADC32B; }
-.flash.error { background-color:#F15A29; }
 
 #main {
-	#main_content {}
+	#main_content {
+		padding-top:40px;
+		padding-bottom:40px;
+	}
 }
 
 #footer {
@@ -241,9 +275,8 @@ body {}
 
 .datasets_new #main {
 	#main_entry {
-		padding-top:40px;
-		padding-bottom:40px;
 		#main_entry_content {
+			padding-bottom:40px;
 			span.examples {
 				font-size:0.8em;
 				a { color:$font-color; }
@@ -301,8 +334,6 @@ body {}
 .datasets_preview #main, .datasets_create #main {
 	#main_result {
 		background-color:#03172B;
-		padding-top:40px;
-		padding-bottom:40px;
 		#main_result_content {
 			textarea {
 				font-family:monospace;
@@ -315,5 +346,17 @@ body {}
 				height:300px;
 			}
 		}
+	}
+}
+
+
+//////////////////////
+// Accounts General //
+//////////////////////
+
+#devise_content {
+	form {
+		label { margin-left:10px; }
+		span { font-style:italic; }
 	}
 }

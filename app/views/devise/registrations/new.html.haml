@@ -1,0 +1,27 @@
+#devise.clearfix
+	.content
+		#devise_content
+			%h2 Sign Up
+
+			= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+				= devise_error_messages!
+			
+				= f.email_field :email
+				= f.label :email
+			
+				%br
+			
+				= f.password_field :password
+				= f.label :password
+			
+				%br
+			
+				= f.password_field :password_confirmation
+				= f.label :password_confirmation
+				
+				%br
+				
+				= f.submit "Sign up", :class=> 'button orange'
+		
+			%br
+			= render "devise/shared/links"
