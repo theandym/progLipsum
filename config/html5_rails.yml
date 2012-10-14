@@ -23,4 +23,5 @@ defaults: &defaults
   <<: *defaults
 
 :production:
-  <<: *defaults
+  :google_account_id: "UA-35550063-1"  # Google Analytics
+  :google_api_key:    ""  # Google APIs

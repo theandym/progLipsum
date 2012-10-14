@@ -1,15 +1,15 @@
 -content_for :javascript do
 	:javascript
 		$('.example_json').click(function() {
-			$('#string').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , “middle_initial” : “[[initial]]” , “address_1” : “[[street_number]] [[street_name]] [[street_type]]” }').keyup();
+			$('#string').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , "middle_initial" : "[[initial]]" , "address_1" : "[[street_number]] [[street_name]] [[street_type]]" , "ssn" : "[[number_9_digit]]" }').keyup();
 			return false;
 		});
 		$('.example_ruby').click(function() {
-			$('#string').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => “[[initial]]”, :address_1 => “[[street_number]] [[street_name]] [[street_type]]”').keyup();
+			$('#string').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => "[[initial]]", :address_1 => "[[street_number]] [[street_name]] [[street_type]]", :ssn => "[[number_9_digit]]"').keyup();
 			return false;
 		});
 		$('.example_xml').click(function() {
-			$('#string').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>").keyup();
+			$('#string').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>\n<ssn>[[number_9_digit]]</ssn>").keyup();
 			return false;
 		});
 
@@ -23,11 +23,10 @@
 				= link_to 'Ruby', nil, :class => 'example_ruby'
 				|
 				= link_to 'XML', nil, :class => 'example_xml'
-			%h3 Enter Format
+			%h2 Data Format
 			/ = form_tag result_path, :remote => true do
 			= form_tag result_path do
-				= text_area_tag :string, nil, :placeholder => 'Enter content format here...'
-				%br
+				= text_area_tag :string, nil, :placeholder => 'ex. Hi, my name is [[name_first]]...'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '1'
 				= label_tag :number_of_entities, '# of Entries'
 				= submit_tag 'Generate!', :class => "button orange right"
@@ -42,25 +41,36 @@
 						%span Names
 						%ul
 							%li
-								[[name_first]] - 
-								%span ex. John
+								[[name_first]]
+								%span (ex. John)
 							%li
-								[[name_last]] - 
-								%span ex. Smith
+								[[name_last]]
+								%span (ex. Smith)
 							%li
-								[[initial]] - 
-								%span ex. M
+								[[initial]]
+								%span (ex. A)
 					%li
 						%span Addresses
 						%ul
 							%li
-								[[street_number]] - 
-								%span ex. 123
+								[[street_number]]
+								%span (ex. 123)
 							%li
-								[[street_name]] - 
-								%span ex. Maple
+								[[street_name]]
+								%span (ex. Maple)
 							%li
-								[[street_type]] - 
-								%span ex. St
+								[[street_type]]
+								%span (ex. St)
+							%li
+								[[city]]
+								%span (ex. New York City)
 			#main_content_options_col_2
-			
+				%ul
+					%li
+						%span Numbers
+						%ul
+							%li
+								[[number_2_digit]] - [[number_9_digit]]
+								%span (ex. 10 - 999999999)
+			.clearfix
+
