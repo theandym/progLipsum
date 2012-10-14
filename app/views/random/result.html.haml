@@ -5,10 +5,11 @@
 		}, function() {
 		  $(this).unselect();
 		});
+
 #main_result
 	.content.clearfix
 		#main_result_content
 			= link_to 'Back', root_path, :class => 'button green right'
 			%h2 Result
 			= text_area_tag nil, @entities_with_data, :readonly => true
-			
+		.clearfix

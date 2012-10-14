@@ -173,8 +173,8 @@ body {}
 
 #header {
 	background-color:#fff;
-	padding-top:10px;
-	padding-bottom:15px;
+	padding-top:7px;
+	padding-bottom:7px;
 	vertical-align:middle;
 	#header_name {
 		font-size:1.4em;
@@ -235,6 +235,7 @@ body {}
 				a { color:$font-color; }
 			}
 			textarea {
+				font-family:monospace;
 				height:200px;
 				width:920px;
 			}
@@ -286,6 +287,7 @@ body {}
 		padding-bottom:40px;
 		#main_result_content {
 			textarea {
+				font-family:monospace;
 				height:400px;
 				width:920px;
 			}

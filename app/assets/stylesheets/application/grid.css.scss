@@ -8,7 +8,7 @@
 .content { @include grid-system(16); }
 
 #header {
-	#header_name { @include grid(8,16); }
+	#header_name { @include grid(3,16); }
 }
 
 #main {}
@@ -29,8 +29,17 @@
 		#main_options_content { @include grid(16,16); }
 	}
 	#main_options {
-		#main_content_options_col_1 { @include grid(8,16); }
-		#main_content_options_col_2 { @include grid(8,16); }
+		#main_options_content {
+			@include grid(16,16);
+			#main_content_options_col_1 {
+				@include grid(8,16);
+				@include alpha;
+			}
+			#main_content_options_col_2 {
+				@include grid(8,16);
+				@include omega;
+			}
+		}
 	}
 }
 
