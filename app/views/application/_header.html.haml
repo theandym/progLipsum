@@ -4,7 +4,7 @@
 			#header_content
 				#header_logo
 					/ = link_to image_tag('logo.png', :alt => "progLipsum - Dead Simple Test Data"), root_path
-					= link_to "&nbsp;".html_safe, root_path
+					= link_to nil, root_path
 				#header_nav
 					= render_navigation(:context => :application_header, :level => 1)
 				.clearfix

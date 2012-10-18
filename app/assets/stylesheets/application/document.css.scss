@@ -199,17 +199,15 @@ body {}
 		vertical-align:middle;
 		#header_logo {
 			a {
-				background:url('/assets/logo_sprite.png') 0 0 no-repeat;
+				background:url('/assets/logo_sprite.png') no-repeat;
 				display:inline-block;
 				height:26px;
 				margin-top:3px;
 				overflow:hidden;
-				text-decoration:none;
+				text-indent:-10000px;
 				width:140px;
 			}
-			a:hover {
-				background:url('/assets/logo_sprite.png') 0 -26px no-repeat;
-			}
+			a:hover { background-position: 0 -26px; }
 		}
 		#header_nav {
 			font-size:0.9em;
