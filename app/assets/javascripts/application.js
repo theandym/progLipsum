@@ -27,4 +27,12 @@ $(window).load(function() {
 	}, 5000);
 	
 	
+	///////////
+	// Forms //
+	///////////
+	
+	$(".focus").focus();
+	
+	$('input[placeholder], textarea[placeholder]').placeholder();
+	
 });

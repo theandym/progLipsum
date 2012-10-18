@@ -1,10 +1,10 @@
 %header
-	#header.clearfix
+	#header
 		.content
 			#header_content
-				#header_name
-					= link_to 'prog', root_path
-					%span><=  link_to content_tag(:span, 'Lipsum'), root_path
-					%h6 Dead Simple Test Data
+				#header_logo
+					/ = link_to image_tag('logo.png', :alt => "progLipsum - Dead Simple Test Data"), root_path
+					= link_to "&nbsp;".html_safe, root_path
 				#header_nav
 					= render_navigation(:context => :application_header, :level => 1)
+				.clearfix

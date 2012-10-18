@@ -9,7 +9,7 @@
 
 #header {
 	#header_content {
-		#header_name { @include grid(3,16); }
+		#header_logo { @include grid(3,16); }
 		#header_nav { @include grid(13,16); }
 	}
 }
