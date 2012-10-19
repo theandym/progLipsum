@@ -58,16 +58,13 @@ Railsrumble2012::Application.routes.draw do
   
   ###
   
-  devise_for :accounts
-  
-  devise_for :accounts, :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout',
-    :confirmation => 'verification',
-    :registration => 'register',
-    :sign_up => 'signup' 
-  }
-  
+  devise_for :account, :skip => [:sessions]
+  as :account do
+    get 'login' => 'devise/sessions#new', :as => :new_account_session
+    post 'login' => 'devise/sessions#create', :as => :account_session
+    match 'logout' => 'devise/sessions#destroy', :as => :destroy_account_session, :via => Devise.mappings[:account].sign_out_via
+    get 'signup' => 'devise/registrations#new', :as => :new_account_registration
+  end
   
   resources :datasets do
     collection do

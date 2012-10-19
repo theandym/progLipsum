@@ -6,9 +6,9 @@
   %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }/
 
   %title
-    == #{ controller.action_name.titleize } | progLipsum - Dead Simple Test Data
+    = application_title
 
-  %meta{ :name => "description", :content => "" }/
+  %meta{ :name => "description", :content => meta_description }/
 
   -# Mobile viewport optimized: h5bp.com/viewport
   %meta{ :name => "viewport", :content => "width=device-width" }/

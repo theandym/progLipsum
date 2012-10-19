@@ -27,7 +27,7 @@
 				= link_to 'XML', nil, :class => 'example_xml'
 			%h3 Enter A Data Format With Variables...
 			= form_for @dataset, :url => preview_datasets_path do |f|
-				= f.text_area :format, :placeholder => 'ex. Hi, my name is [[name_first]]...'
+				= f.text_area :format, :placeholder => 'Hi, my name is [[name_first]].'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '10'
 				= label_tag :number_of_entities, '# of Entries'
 				= submit_tag "Generate Dataset &rarr;".html_safe, :class => "button orange right"
@@ -43,22 +43,22 @@
 						%ul
 							%li
 								[[name_first]]
-								%span (ex. John)
+								%span ex. John
 							%li
 								[[name_last]]
-								%span (ex. Smith)
+								%span ex. Smith
 							%li
 								[[initial]]
-								%span (ex. A)
+								%span ex. A
 							%li
 								[[email_address]]
-								%span (ex. jessica@silva.com)
+								%span ex. john@smith.com
 					%li
 						%span Numbers
 						%ul
 							%li
 								[[number_2_digit]] - [[number_9_digit]]
-								%span (ex. 10 - 999999999)
+								%span ex. 10 - 999999999
 
 			#main_datasets_options_content_col_2
 				%ul
@@ -67,14 +67,20 @@
 						%ul
 							%li
 								[[street_number]]
-								%span (ex. 123)
+								%span ex. 123
 							%li
 								[[street_name]]
-								%span (ex. Maple)
+								%span ex. Maple
 							%li
 								[[street_type]]
-								%span (ex. St)
+								%span ex. St
 							%li
 								[[city]]
-								%span (ex. New York City)
+								%span ex. New York City
+					%li
+						%span Text
+						%ul
+							%li
+								[[lipsum_1]] - [[lipsum_5]]
+								%span ex. "Lorem ipsum dolor sit amet..." (1 - 5 paragraphs)
 
