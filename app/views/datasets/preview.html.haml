@@ -9,7 +9,7 @@
 #main_datasets_preview.clearfix
 	.content
 		#main_datasets_preview_content
-			%h2 New Dataset
+			%h3 Here Is Your New Dataset...
 			- if account_signed_in?
 				= form_for @dataset do |f|
 					= f.label :format, 'Input Format'

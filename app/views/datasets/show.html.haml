@@ -2,8 +2,8 @@
 	.content
 		#main_datasets_show_content
 			%td.delete= link_to 'Delete', dataset_path(@dataset), :confirm => "Are you sure you want to delete this dataset? (Note: There is no undo.)", :method => :delete, :class => 'button orange right'
-			%h2
-				Dataset:
+			%h3
+				Dataset Name:
 				= @dataset.name
 			%label Input Format
 			= text_area_tag nil, @dataset.format, :readonly => true

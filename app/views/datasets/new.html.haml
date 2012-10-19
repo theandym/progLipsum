@@ -19,23 +19,23 @@
 	.content
 		#main_datasets_new_content
 			%span{:class => 'examples right'}
-				Try it out: 
+				Examples: 
 				= link_to 'JSON', nil, :class => 'example_json'
 				|
 				= link_to 'Ruby', nil, :class => 'example_ruby'
 				|
 				= link_to 'XML', nil, :class => 'example_xml'
-			%h2 Data Format
+			%h3 Enter A Data Format With Variables...
 			= form_for @dataset, :url => preview_datasets_path do |f|
 				= f.text_area :format, :placeholder => 'ex. Hi, my name is [[name_first]]...'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '10'
 				= label_tag :number_of_entities, '# of Entries'
-				= submit_tag 'Generate', :class => "button orange right"
+				= submit_tag "Generate Dataset &rarr;".html_safe, :class => "button orange right"
 
 #main_datasets_options.clearfix
 	.content
 		#main_datasets_options_content
-			%h2 Variables
+			%h3 Variables
 			#main_datasets_options_content_col_1
 				%ul
 					%li
