@@ -31,8 +31,8 @@
 //////////////////////
 
 .datasets_index {
-	#main_index { 
-		#main_index_content { @include grid(16,16); }
+	#main_datasets_index { 
+		#main_datasets_index_content { @include grid(16,16); }
 	}
 }
 
@@ -42,18 +42,17 @@
 ////////////////////
 
 .datasets_new {
-	#main_entry { 
-		#main_entry_content { @include grid(16,16); }
-		#main_options_content { @include grid(16,16); }
+	#main_datasets_new { 
+		#main_datasets_new_content { @include grid(16,16); }
 	}
-	#main_options {
-		#main_options_content {
+	#main_datasets_options {
+		#main_datasets_options_content {
 			@include grid(16,16);
-			#main_content_options_col_1 {
+			#main_datasets_options_content_col_1 {
 				@include grid(8,16);
 				@include alpha;
 			}
-			#main_content_options_col_2 {
+			#main_datasets_options_content_col_2 {
 				@include grid(8,16);
 				@include omega;
 			}
@@ -66,17 +65,10 @@
 // Datasets > Preview / Create //
 /////////////////////////////////
 
-.datasets_preview #main, .datasets_create #main { 
-	#main_result_content { @include grid(16,16); }
-}
-
-
-/////////////////////////////////
-// Datasets > Preview / Create //
-/////////////////////////////////
-
-#devise {
-	#devise_content { @include grid(16,16); }
+.datasets_preview { 
+	#main_datasets_preview {
+		#main_datasets_preview_content { @include grid(16,16); }
+	}
 }
 
 
@@ -85,7 +77,19 @@
 /////////////////////
 
 .datasets_show {
-	#main_show { 
-		#main_show_content { @include grid(16,16); }
+	#main_datasets_show { 
+		#main_datasets_show_content { @include grid(16,16); }
 	}
 }
+
+
+//////////////////////
+// Accounts General //
+//////////////////////
+
+#devise {
+	#devise_content { @include grid(16,16); }
+}
+
+
+

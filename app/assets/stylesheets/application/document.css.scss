@@ -264,8 +264,8 @@ body {}
 //// Datasets > Index ////
 //////////////////////////
 
-.datasets_index #main {
-	#main_index {
+.datasets_index {
+	#main_datasets_index {
 		table {
 			tr {
 				th, td {
@@ -301,9 +301,9 @@ body {}
 //// Datasets > New ////
 ////////////////////////
 
-.datasets_new #main {
-	#main_entry {
-		#main_entry_content {
+.datasets_new {
+	#main_datasets_new {
+		#main_datasets_new_content {
 			padding-bottom:40px;
 			span.examples {
 				font-size:0.8em;
@@ -321,9 +321,9 @@ body {}
 			label { margin-left:10px; }
 		}
 	}
-	#main_options {
+	#main_datasets_options {
 		background-color:#112437;
-		#main_options_content {
+		#main_datasets_options_content {
 			font-size:0.9em;
 			margin-top:20px;
 			margin-bottom:20px;
@@ -355,14 +355,14 @@ body {}
 }
 
 
-/////////////////////////////////////
-//// Datasets > Preview / Create ////
-/////////////////////////////////////
+////////////////////////////
+//// Datasets > Preview ////
+////////////////////////////
 
-.datasets_preview #main, .datasets_create #main {
-	#main_result {
+.datasets_preview {
+	#main_datasets_preview {
 		background-color:#03172B;
-		#main_result_content {
+		#main_datasets_preview_content {
 			textarea {
 				font-family:monospace;
 				margin-bottom:20px;
@@ -382,8 +382,8 @@ body {}
 //// Datasets > Show ////
 /////////////////////////
 
-.datasets_show #main {
-	#main_show {
+.datasets_show {
+	#main_datasets_show {
 		textarea {
 			height:200px;
 			width:920px;

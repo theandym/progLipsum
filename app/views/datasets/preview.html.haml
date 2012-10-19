@@ -6,9 +6,9 @@
 		  $(this).unselect();
 		});
 
-#main_result.clearfix
+#main_datasets_preview.clearfix
 	.content
-		#main_result_content
+		#main_datasets_preview_content
 			%h2 New Dataset
 			- if account_signed_in?
 				= form_for @dataset do |f|

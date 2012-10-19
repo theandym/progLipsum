@@ -15,9 +15,9 @@
 			return false;
 		});
 
-#main_entry.clearfix
+#main_datasets_new.clearfix
 	.content
-		#main_entry_content
+		#main_datasets_new_content
 			%span{:class => 'examples right'}
 				Try it out: 
 				= link_to 'JSON', nil, :class => 'example_json'
@@ -32,11 +32,11 @@
 				= label_tag :number_of_entities, '# of Entries'
 				= submit_tag 'Generate', :class => "button orange right"
 
-#main_options.clearfix
+#main_datasets_options.clearfix
 	.content
-		#main_options_content
+		#main_datasets_options_content
 			%h2 Variables
-			#main_content_options_col_1
+			#main_datasets_options_content_col_1
 				%ul
 					%li
 						%span Names
@@ -60,7 +60,7 @@
 								[[number_2_digit]] - [[number_9_digit]]
 								%span (ex. 10 - 999999999)
 
-			#main_content_options_col_2
+			#main_datasets_options_content_col_2
 				%ul
 					%li
 						%span Addresses
