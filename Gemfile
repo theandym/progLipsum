@@ -67,3 +67,6 @@ gem 'simple-navigation'
 
 # Authentication
 gem 'devise'
+
+# Turbolinks
+gem 'turbolinks'
