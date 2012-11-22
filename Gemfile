@@ -60,13 +60,13 @@ gem 'haml-rails'
 gem 'html5-rails'
 
 # 960 Grid System Compass Plugin - https://github.com/nextmat/compass-960-plugin
-gem 'compass-960-plugin'
+gem 'compass-960-plugin', '~> 0.10.4'
 
 # Navigation
-gem 'simple-navigation'
+gem 'simple-navigation', '~> 3.9.0'
 
 # Authentication
-gem 'devise'
+gem 'devise', '~> 2.1.2'
 
 # Turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 0.5.1'

@@ -165,19 +165,19 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
-  compass-960-plugin
+  compass-960-plugin (~> 0.10.4)
   compass-h5bp
   compass-rails
-  devise
+  devise (~> 2.1.2)
   haml-rails
   html5-rails
   jquery-rails
   mysql2
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
-  simple-navigation
+  simple-navigation (~> 3.9.0)
   sqlite3
   therubyracer
   thin
-  turbolinks
+  turbolinks (~> 0.5.1)
   uglifier (>= 1.0.3)
