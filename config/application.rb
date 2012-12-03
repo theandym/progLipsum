@@ -58,5 +58,11 @@ module Railsrumble2012
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    ###
+    
+    # Devise recommendation to force application to not access the DB or load models when
+    # precompiling assets; especially useful for Heroku.
+    config.assets.initialize_on_precompile = false
   end
 end
