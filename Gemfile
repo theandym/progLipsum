@@ -75,3 +75,11 @@ gem 'devise', '~> 2.1.2'
 
 # Turbolinks
 gem 'turbolinks', '~> 0.5.1'
+
+# Better Errors
+group :development do
+  gem "better_errors"
+end
+
+# Mannequin
+gem 'mannequin'
