@@ -1,17 +1,17 @@
 -content_for :javascript do
 	:javascript
 		$('.example_json').click(function() {
-			$('#dataset_format').val('{ "first_name" : "[[name_first]]" , "last_name" : "[[name_last]]" , "middle_initial" : "[[initial]]" , "address_1" : "[[street_number]] [[street_name]] [[street_type]]" , "ssn" : "[[number_9_digit]]" }').keyup();
+			$('#dataset_format').val('{ "first_name" : "[[first_name]]" , "last_name" : "[[last_name]]" , "middle_initial" : "[[initial]]" , "address_1" : "[[street_address]]" , "ssn" : "[[number_9_digit]]" }').keyup();
 			return false;
 		});
 		
 		$('.example_ruby').click(function() {
-			$('#dataset_format').val(':first_name => "[[name_first]]", :last_name => "[[name_last]]", :middle_initial => "[[initial]]", :address_1 => "[[street_number]] [[street_name]] [[street_type]]", :ssn => "[[number_9_digit]]"').keyup();
+			$('#dataset_format').val(':first_name => "[[first_name]]", :last_name => "[[last_name]]", :middle_initial => "[[initial]]", :address_1 => "[[street_address]]", :ssn => "[[number_9_digit]]"').keyup();
 			return false;
 		});
 		
 		$('.example_xml').click(function() {
-			$('#dataset_format').val("<first_name>[[name_first]]</first_name>\n<last_name>[[name_last]]</last_name>\n<middle_initial>[[initial]]</middle_initial>\n<street_1>[[street_number]] [[street_name]] [[street_type]]</street>\n<ssn>[[number_9_digit]]</ssn>").keyup();
+			$('#dataset_format').val("<person>\n\t<first_name>[[first_name]]</first_name>\n\t<last_name>[[last_name]]</last_name>\n\t<middle_initial>[[initial]]</middle_initial>\n\t<address_1>[[street_address]]</address_1>\n\t<ssn>[[number_9_digit]]</ssn>\n</person>").keyup();
 			return false;
 		});
 
@@ -27,7 +27,7 @@
 				= link_to 'XML', nil, :class => 'example_xml'
 			%h3 Enter A Data Format With Variables...
 			= form_for @dataset, :url => preview_datasets_path do |f|
-				= f.text_area :format, :placeholder => 'Hi, my name is [[name_first]].'
+				= f.text_area :format, :placeholder => 'Hi, my name is [[first_name]].'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '10'
 				= label_tag :number_of_entities, '# of Entries'
 				= submit_tag "Generate Dataset &rarr;".html_safe, :class => "button orange right"
@@ -42,17 +42,20 @@
 						%span Names
 						%ul
 							%li
-								[[name_first]]
+								[[first_name]]
 								%span ex. John
 							%li
-								[[name_last]]
-								%span ex. Smith
+								[[last_name]]
+								%span ex. Doe
 							%li
-								[[initial]]
+								[[middle_name]]
+								%span ex. Adam
+							%li
+								[[middle_initial]]
 								%span ex. A
 							%li
 								[[email_address]]
-								%span ex. john@smith.com
+								%span ex. john@doe.com
 					%li
 						%span Numbers
 						%ul
@@ -66,6 +69,9 @@
 						%span Addresses
 						%ul
 							%li
+								[[street_address]]
+								%span ex. 123 Maple St
+							%li
 								[[street_number]]
 								%span ex. 123
 							%li
@@ -77,6 +83,15 @@
 							%li
 								[[city]]
 								%span ex. New York City
+							%li
+								[[state]]
+								%span ex. New York
+							%li
+								[[state_code]]
+								%span ex. NY
+							%li
+								[[country]]
+								%span ex. United States
 					%li
 						%span Text
 						%ul
