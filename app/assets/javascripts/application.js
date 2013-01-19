@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require h5bp
 //= require turbolinks
+//= require jquery.placeholder.min
 
 $(window).load(function() {
 	
