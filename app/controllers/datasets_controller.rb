@@ -30,6 +30,7 @@ class DatasetsController < ApplicationController
     @number_of_entities.times do
       @person = Mannequin::Person.new
       @address = Mannequin::Address.new
+      @number = Mannequin::Number.new
       
       map_variables_to_data = {
         "[[name_first]]" => @person.first_name, #deprecated
@@ -47,14 +48,24 @@ class DatasetsController < ApplicationController
         "[[state]]" => @address.state,
         "[[state_code]]" => @address.state_code,
         "[[country]]" => @address.country,
-        "[[number_2_digit]]" => 10 + Random.rand(99 - 10),
-        "[[number_3_digit]]" => 100 + Random.rand(999 - 100),
-        "[[number_4_digit]]" => 1000 + Random.rand(9999 - 1000),
-        "[[number_5_digit]]" => 10000 + Random.rand(99999 - 10000),
-        "[[number_6_digit]]" => 100000 + Random.rand(999999 - 100000),
-        "[[number_7_digit]]" => 1000000 + Random.rand(9999999 - 1000000),
-        "[[number_8_digit]]" => 10000000 + Random.rand(99999999 - 10000000),
-        "[[number_9_digit]]" => 100000000 + Random.rand(999999999 - 100000000),
+        "[[number_1_digit]]" => @number.digits_1, #deprecated
+        "[[number_digits_1]]" => @number.digits_1,
+        "[[number_2_digit]]" => @number.digits_2, #deprecated
+        "[[number_digits_2]]" => @number.digits_2,
+        "[[number_3_digit]]" => @number.digits_3, #deprecated
+        "[[number_digits_3]]" => @number.digits_3,
+        "[[number_4_digit]]" => @number.digits_4, #deprecated
+        "[[number_digits_4]]" => @number.digits_4,
+        "[[number_5_digit]]" => @number.digits_5, #deprecated
+        "[[number_digits_5]]" => @number.digits_5,
+        "[[number_6_digit]]" => @number.digits_6, #deprecated
+        "[[number_digits_6]]" => @number.digits_6,
+        "[[number_7_digit]]" => @number.digits_7, #deprecated
+        "[[number_digits_7]]" => @number.digits_7,
+        "[[number_8_digit]]" => @number.digits_8, #deprecated
+        "[[number_digits_8]]" => @number.digits_8,
+        "[[number_9_digit]]" => @number.digits_9, #deprecated
+        "[[number_digits_9]]" => @number.digits_9,
         "[[lipsum_1]]" => @text.lipsum_paragraphs_1, #deprecated
         "[[lipsum_paragraphs_1]]" => @text.lipsum_paragraphs_1,
         "[[lipsum_2]]" => @text.lipsum_paragraphs_2, #deprecated
