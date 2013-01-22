@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Railsrumble2012::Application.load_tasks
+ProgLipsum::Application.load_tasks

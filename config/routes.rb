@@ -1,4 +1,4 @@
-Railsrumble2012::Application.routes.draw do
+ProgLipsum::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
