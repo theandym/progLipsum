@@ -6,7 +6,7 @@
 			= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
 			
 				= f.email_field :email
-				= f.label :email
+				= f.label :email, 'Email Address'
 				
 				%br
 				
@@ -21,7 +21,7 @@
 				
 				%br
 				
-				= f.submit "Sign in", :class => 'busson orange'
+				= f.submit "Sign in", :class => 'button blue'
 				
 			%br
 			= render "devise/shared/links"

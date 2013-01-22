@@ -1,5 +1,13 @@
 -content_for :javascript do
 	:javascript
+		$('.format').hide();
+		$('.display_format').show();
+		$(".toggle_format").click(function() {
+			$('.format').toggle();
+			$('.display_format').toggle();
+			$('.hide_format').toggle();
+		});
+		
 		// http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
 		$("#dataset_output").focus(function() {
 			var $this = $(this);
@@ -17,30 +25,26 @@
 	.content
 		#main_datasets_preview_content
 			%h3 Here Is Your New Dataset...
-			- if account_signed_in?
-				= form_for @dataset do |f|
+			= form_for @dataset do |f|
+				%span.toggle
+					.button.small.hide_format.toggle_format Hide Input Format
+					.button.small.display_format.toggle_format Display Input Format
+				.format
 					= f.label :format, 'Input Format'
-					= f.text_area :format
-					= f.label :output, 'Output Data'
-					= f.text_area :output, :readonly => true
+					= f.text_area :format, :id => 'dataset_format'
+				= f.label :output, 'Output Data'
+				= f.text_area :output, :readonly => true, :id => 'dataset_output'
+				- if account_signed_in?
 					= f.label :name, 'Name'
 					= f.text_field :name, :size => 30, :placeholder => 'My Dataset'
-					/ = label_tag :number_of_entities, '# of Entries'
-					= submit_tag 'Save', :class => "button orange right"
-			- else
-				%label Input Format
-				= text_area_tag nil, @dataset.format, :readonly => true, :id => 'dataset_format'
-				%label Output Data
-				= text_area_tag nil, @dataset.output, :readonly => true, :id => 'dataset_output'
-				
-				%br
-				%br
-				
-				%p
-					To save a dataset,
-					= link_to 'log in', new_account_session_path
-					or
-					= link_to 'sign up', new_account_registration_path
-					\. 
+					= submit_tag 'Save', :class => "button blue right"
+				- else
+					%p
+						To save a dataset,
+						= link_to 'log in', new_account_session_path
+						or
+						= link_to 'sign up', new_account_registration_path
+						\.
+
 			
 		.clearfix

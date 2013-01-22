@@ -27,10 +27,10 @@
 				= link_to 'XML', nil, :class => 'example_xml'
 			%h3 Enter A Data Format With Variables...
 			= form_for @dataset, :url => preview_datasets_path do |f|
-				= f.text_area :format, :placeholder => 'Hi, my name is [[first_name]].'
+				= f.text_area :format, :placeholder => 'Hi, my name is [[first_name]].', :class => 'focus'
 				= text_field_tag :number_of_entities, nil, :size => 3, :maxlength => 3, :placeholder => '10'
 				= label_tag :number_of_entities, '# of Entries'
-				= submit_tag "Generate Dataset &rarr;".html_safe, :class => "button orange right"
+				= submit_tag "Generate Dataset &rarr;".html_safe, :class => "button green right"
 
 #main_datasets_options.clearfix
 	.content
@@ -62,7 +62,7 @@
 							%li
 								[[number_digits_1]] - [[number_digits_9]]
 								%br
-								%span ex. 1 - 999999999
+								%span.no_margin ex. 1 - 999999999
 
 			#main_datasets_options_content_col_2
 				%ul
@@ -99,5 +99,5 @@
 							%li
 								[[lipsum_paragraphs_1]] - [[lipsum_paragraphs_5]]
 								%br
-								%span ex. "Lorem ipsum dolor sit amet..." (1 - 5 paragraphs)
+								%span.no_margin ex. "Lorem ipsum dolor sit amet..." (1 - 5 paragraphs)
 

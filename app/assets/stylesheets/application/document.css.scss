@@ -17,7 +17,7 @@
 /////////////////
 
 html {
-	background-color:#03172B;
+	background-color:#fff;
 	color:$font-color;
 	font-family:$font-family;
 	font-size:$font-size;
@@ -25,6 +25,7 @@ html {
 	-webkit-font-smoothing:antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 { margin:0; }
 h1 {
 	font-size:1.6em;
 	margin-bottom:10px;
@@ -58,10 +59,10 @@ h6 {
 }
 
 hr {
-	background-color:#fff;
+	background-color:#dfdfdf;
 	border:none;
 	display:block;
-	height:1px;
+	height:2px;
 }
 
 a:link, a:visited, a:hover, a:active { color:$font-color; }
@@ -84,12 +85,21 @@ a:hover, a:active { text-decoration:none; }
 	.flash_content {
 		color:#fff;
 		font-size:0.9em;
+		font-weight:600;
 		padding:10px 0;
 		text-align:center;
 	}
 }
-.flash.notice { background-color:#779444; }
-.flash.alert, .flash.error { background-color:#F15A29; }
+.flash.notice {
+	background-color:#6e8a3f;
+	@include background-image(linear-gradient(#93b854, #6e8a3f));
+	border-color:#5e803b;
+}
+.flash.alert, .flash.error {
+	background-color:#a63f1c;
+	@include background-image(linear-gradient(#d95225, #a63f1c));
+	border-color:#8c3518;
+}
 
 
 ///////////
@@ -109,11 +119,11 @@ input, textarea {
 	background:#fff;
 	border:none;
 	@include border-radius(3px);
-	color:#204666;
+	color:#555;
 	margin:10px auto;
 	padding:10px;
 }
-input[type="text"], input[type="email"], input[type="password"], textarea { background:#eee; }
+input[type="text"], input[type="email"], input[type="password"], textarea { background:#dfdfdf; }
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus { background:#fff; }
 
 .field_with_errors {
@@ -127,10 +137,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 /////////////
 
 .button, a.button, input[type="submit"] {
-	background-color:#fff;
-	border:2px solid #fff;
+	background-color:#aaa;
+	@include background-image(linear-gradient(#eaeaea, #c0c0c0));
+	border:1px solid #888;
 	@include border-radius(3px);
-	color:#112437;
+	color:#333;
 	display:inline-block;
 	font-size:0.8em;
 	-webkit-font-smoothing:antialiased;
@@ -148,38 +159,45 @@ input[type="submit"] { padding:10px 15px; }
 	margin-right:0;
 }
 
+.button.small { padding:5px 10px 5px; }
+
 .button:hover, .button:active, a.button:hover, a.button:active, input[type="submit"]:hover, input[type="submit"]:active {
-	background-color:#03172B;
-	border-color:#fff;
-	color:#fff;
+	background-color:#bbb;
+	@include background-image(linear-gradient(#dadada, #b0b0b0));
+	border-color:#9f9f9f;
 }
 
 .button.orange, a.button.orange, input[type="submit"].orange {
-	background-color:#F15A29;
-	border-color:#F15A29;
+	background-color:#a63f1c;
+	@include background-image(linear-gradient(#d95225, #a63f1c));
+	border-color:#8c3518;
 }
 .button:hover.orange, .button:active.orange, a.button:hover.orange, a.button:active.orange, input[type="submit"]:hover.orange, input[type="submit"]:active.orange {
-	background-color:#03172B;
-	color:#F15A29;
+	background-color:#8c3518;
+	@include background-image(linear-gradient(#bf4821, #8c3518));
 }
 
 .button.green, a.button.green, input[type="submit"].green {
-	background-color:#779444;
-	border-color:#779444;
+	background-color:#6e8a3f;
+	@include background-image(linear-gradient(#93b854, #6e8a3f));
+	border-color:#5e803b;
 }
 .button:hover.green, .button:active.green, a.button:hover.green, a.button:active.green, input[type="submit"]:hover.green, input[type="submit"]:active.green {
-	background-color:#03172B;
-	color:#779444;
+	background-color:#627a38;
+	@include background-image(linear-gradient(#87a84d, #627a38));
 }
 
 .button.blue, a.button.blue, input[type="submit"].blue {
-	background-color:#00AEEF;
-	border-color:#00AEEF;
+	background-color:#2f404f;
+	@include background-image(linear-gradient(#4a667d, #2f404f));
+	border-color:#1c2c39;
 }
 .button:hover.blue, .button:active.blue, a.button:hover.blue, a.button:active.blue, input[type="submit"]:hover.blue, input[type="submit"]:active.blue {
-	background-color:#03172B;
-	color:#00AEEF;
+	background-color:#263440;
+	@include background-image(linear-gradient(#41596e, #263440));
 }
+
+.button.orange, .button.green, .button.blue { color:#fff; }
 
 
 //////////
@@ -196,10 +214,11 @@ body {}
 #container {}
 
 #header {
-	background-color:#fff;
+	/*background-color:#efefef;
+	@include background-image(linear-gradient(#efefef, #dfdfdf));
+	border-bottom:1px solid #d7d7d7;*/
 	#header_content {
-		padding-top:15px;
-		padding-bottom:15px;
+		padding:15px 0;
 		vertical-align:middle;
 		#header_logo {
 			a {
@@ -212,9 +231,16 @@ body {}
 				width:140px;
 			}
 			a:hover { background-position: 0 -26px; }
+			span {
+				color:#999;
+				display:inline-block;
+				font-size:0.85em;
+				font-weight:0;
+			}
 		}
 		#header_nav {
 			font-size:0.9em;
+			margin-top:10px;
 			text-align:right;
 			vertical-align:middle;
 			ul {
@@ -223,21 +249,6 @@ body {}
 				li {
 					display:inline;
 					margin-left:15px;
-					a {
-						background-color:#F15A29;
-						border:2px solid #F15A29;
-						@include border-radius(3px);
-						color:#fff;
-						display:inline-block;
-						font-size:0.8em;
-						font-weight:bold;
-						padding:4px 8px;
-						text-decoration:none;
-					}
-					a:hover, a:active {
-						background-color:#fff;
-						color:#F15A29;
-					}
 				}
 			}
 		}
@@ -245,16 +256,13 @@ body {}
 }
 
 #main {
-	#main_content {
-		padding-top:40px;
-		padding-bottom:40px;
-	}
+	background-color:#efefef;
+	#main_content {}
 }
 
 #footer {
 	font-size:0.85em;
-	margin-top:20px;
-	margin-bottom:40px;
+	padding:25px 0;
 }
 
 
@@ -270,11 +278,12 @@ body {}
 
 .datasets_index {
 	#main_datasets_index {
+		padding:25px 0;
 		table {
 			tr {
 				th, td {
-					border:2px solid #112437;
-					padding:5px 8px;
+					border:2px solid #dfdfdf;
+					padding:8px 12px;
 				}
 				th {
 					font-size:0.7em;
@@ -308,7 +317,7 @@ body {}
 .datasets_new {
 	#main_datasets_new {
 		#main_datasets_new_content {
-			padding-bottom:40px;
+			padding:25px 0;
 			span.examples {
 				font-size:0.8em;
 				margin-top:5px;
@@ -327,7 +336,8 @@ body {}
 		}
 	}
 	#main_datasets_options {
-		background-color:#112437;
+		background-color:#fff;
+		padding:25px 0 0;
 		#main_datasets_options_content {
 			margin-top:20px;
 			margin-bottom:20px;
@@ -335,13 +345,19 @@ body {}
 				font-size:0.9em;
 				padding:0;
 				li {
-					span { text-decoration:underline; }
+					background:#efefef;
+					@include border-radius(3px);
+					margin-bottom:20px;
+					padding:15px 20px 10px;
+					span { font-weight:bold; }
 					ul {
-						padding-left:15px;
+/*						padding-left:15px;*/
 						li {
 							font-family:monospace;
 							font-size:1.2em;
 							line-height:1.6em;
+							margin:0;
+							padding:0;
 							span {
 								color:#999;
 								font-family:Helvetica, Arial, sans-serif;
@@ -351,6 +367,7 @@ body {}
 								text-decoration:none;
 								vertical-align:middle;
 							}
+							span.no_margin { margin-left:0; }
 						}
 					}
 				}
@@ -366,18 +383,37 @@ body {}
 
 .datasets_preview, .datasets_create {
 	#main_datasets_preview {
-		background-color:#03172B;
+		padding:25px 0;
 		#main_datasets_preview_content {
+			span.toggle {
+				display:inline-block;
+				font-size:0.8em;
+				margin-bottom:20px;
+				.toggle_format {
+					cursor:pointer;
+				}
+				.toggle_format:hover, .toggle_format:active { text-decoration:none; }
+				.hide_format { display:none; }
+			}
+			
+			label {
+				display:block;
+				font-weight:bold;
+			}
+			code {
+				display:block;
+				font-family:monospace;
+				margin:10px 0;
+			}
 			textarea {
 				font-family:monospace;
 				margin-bottom:20px;
 				width:920px;
 			}
-			#dataset_format { height:150px; }
-			#dataset_output {
-				background-color:#aaa;
-				height:300px;
-			}
+			.display_format { display:none; }
+			#dataset_format { height:200px; }
+			#dataset_output { height:400px; }
+			p { font-size:0.9em; }
 		}
 	}
 }
@@ -389,6 +425,7 @@ body {}
 
 .datasets_show {
 	#main_datasets_show {
+		padding:25px 0;
 		textarea {
 			height:200px;
 			width:920px;
@@ -402,6 +439,7 @@ body {}
 //////////////////////
 
 #devise_content {
+	padding:25px 0;
 	form {
 		label { margin-left:10px; }
 		span { font-style:italic; }
