@@ -1,6 +1,6 @@
 # progLipsum
 
-progLipsum ([http://proglipsum.com](http://proglipsum.com)) is a Rails 3 web app designed to make it easy to generate test data. The idea was born out of a need for constantly varied data to use when testing other apps. The initial version was coded during the 2012 Rails Rumble. Since then, the core data generation has been abstracted to its own gem, [mannequin](https://github.com/theandym/mannequin).
+progLipsum ([http://proglipsum.com](http://proglipsum.com)) is a Rails 3 web app designed to make it easy to generate test data. The idea was born out of a need for constantly varied data to use when testing other apps. The initial version was coded during the 2012 Rails Rumble. Since then, the core data generation has been abstracted to its own gem, [`mannequin`](https://github.com/theandym/mannequin).
 
 ## Installation
 
@@ -27,11 +27,11 @@ This will set the secret_token for that installation and restart the Heroku app.
 
 ## Usage
 
-This app can be used by anyone to define custom data formats and populate the formats with data. Current data variables are dependent on those defined by the `mannequin` gem.
+This app free and open-source. It can be used by anyone to define custom data formats and populate the formats with data. Current data variables are dependent on those defined by the [`mannequin`](https://github.com/theandym/mannequin) gem.
 
 ## Contributing
 
-Contributions to this app, or to the [`mannequin`](https://github.com/theandym/mannequin) gem, are welcome, both together as well as separately.
+Contributions to this app, or to the [`mannequin`](https://github.com/theandym/mannequin) gem, are welcome. Such contributions could take the form of adding new variable types, in which case contributions to both would be appreciated (although not necessary). Or they might come on their own as enhancements or new features. Either way, the following steps apply:
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
