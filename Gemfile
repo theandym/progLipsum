@@ -83,3 +83,6 @@ end
 
 # Mannequin
 gem 'mannequin'
+
+# Backbone.js
+gem 'rails-backbone', '~> 0.9.10'

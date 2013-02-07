@@ -15,6 +15,13 @@
 //= require h5bp
 //= require turbolinks
 //= require jquery.placeholder.min
+//
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//
+//= require_tree .
 
 $(window).load(function() {
 	
