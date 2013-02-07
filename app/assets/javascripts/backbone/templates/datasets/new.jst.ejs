@@ -1,0 +1,35 @@
+<h1>New dataset</h1>
+
+<form id="new-dataset" name="dataset">
+  <div class="field">
+    <label for="name"> name:</label>
+    <input type="text" name="name" id="name" value="<%= name %>" >
+  </div>
+
+  <div class="field">
+    <label for="format"> format:</label>
+    <input type="text" name="format" id="format" value="<%= format %>" >
+  </div>
+
+  <div class="field">
+    <label for="output"> output:</label>
+    <input type="text" name="output" id="output" value="<%= output %>" >
+  </div>
+
+  <div class="field">
+    <label for="public"> public:</label>
+    <input type="text" name="public" id="public" value="<%= public %>" >
+  </div>
+
+  <div class="field">
+    <label for="account_id"> account_id:</label>
+    <input type="text" name="account_id" id="account_id" value="<%= account_id %>" >
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Create Dataset" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>
