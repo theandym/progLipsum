@@ -1,20 +1,28 @@
-#main_datasets_index.clearfix
-	.content
-		#main_datasets_index_content
-			%h2 Datasets
-			%table.datasets
-				%tr
-					%th.name Name
-					%th.format Format
-					%th.delete
-				- if @datasets.count == 0
-					%tr
-						%td.center.full.light_gray{:colspan => "3"} No Datasets
-				- else
-					- @datasets.each do |dataset|
-						%tr
-							%td.name= link_to dataset.name, dataset_path(dataset)
-							%td.format= truncate(dataset.format, :length=>70, :omission =>" ...")
-							%td.delete= link_to 'Delete', dataset_path(dataset), :confirm => "Are you sure you want to delete this dataset? (Note: There is no undo.)", :method => :delete, :class => 'button orange'
-			%br
-			= link_to "New Dataset", root_path, :class => "button green"
+#datasets
+-content_for :javascript do
+	:javascript
+		$(function() {
+			window.router = new ProgLipsum.Routers.DatasetsRouter({datasets: #{@datasets.to_json.html_safe}});
+			Backbone.history.start();
+		});
+
+/ #main_datasets_index.clearfix
+/ 	.content
+/ 		#main_datasets_index_content
+/ 			%h2 Datasets
+/ 			%table.datasets
+/ 				%tr
+/ 					%th.name Name
+/ 					%th.format Format
+/ 					%th.delete
+/ 				- if @datasets.count == 0
+/ 					%tr
+/ 						%td.center.full.light_gray{:colspan => "3"} No Datasets
+/ 				- else
+/ 					- @datasets.each do |dataset|
+/ 						%tr
+/ 							%td.name= link_to dataset.name, dataset_path(dataset)
+/ 							%td.format= truncate(dataset.format, :length=>70, :omission =>" ...")
+/ 							%td.delete= link_to 'Delete', dataset_path(dataset), :confirm => "Are you sure you want to delete this dataset? (Note: There is no undo.)", :method => :delete, :class => 'button orange'
+/ 			%br
+/ 			= link_to "New Dataset", root_path, :class => "button green"

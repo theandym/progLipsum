@@ -6,7 +6,6 @@ class ProgLipsum.Models.Dataset extends Backbone.Model
     format: null
     output: null
     public: null
-    account_id: null
 
 class ProgLipsum.Collections.DatasetsCollection extends Backbone.Collection
   model: ProgLipsum.Models.Dataset

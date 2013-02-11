@@ -21,6 +21,7 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //
+//= require ./backbone/prog_lipsum
 //= require_tree .
 
 $(window).load(function() {

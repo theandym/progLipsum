@@ -72,5 +72,5 @@ ProgLipsum::Application.routes.draw do
     end
   end
   
-  root :to => "datasets#new"
+  root :to => "datasets#index"
 end

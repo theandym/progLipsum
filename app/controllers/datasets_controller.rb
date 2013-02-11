@@ -1,12 +1,21 @@
 class DatasetsController < ApplicationController
   def index
     @datasets = current_account.datasets.all
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @datasets }
+    end
   end
   
   def new
     @dataset = Dataset.new
     
     @object = @dataset
+    
+    respond_to do |format|
+      format.json { render json: @dataset }
+    end
   end
   
   def preview
@@ -85,6 +94,10 @@ class DatasetsController < ApplicationController
         @dataset.output << "\n\n"
       end
     end
+    
+    respond_to do |format|
+      format.json { render json: @dataset }
+    end
   end
   
   def create
@@ -93,23 +106,39 @@ class DatasetsController < ApplicationController
     
     @object = @dataset
     
-    if @dataset.save
-      redirect_to datasets_path, :notice => 'Save successful!'
-    else
-      render :preview
+    # if @dataset.save
+    #   redirect_to datasets_path, :notice => 'Save successful!'
+    # else
+    #   render :preview
+    # end
+    
+    respond_to do |format|
+      if @dataset.save
+        format.json { render json: @dataset, status: :created, location: @dataset }
+      else
+        format.json { render json: @dataset.errors, status: :unprocessable_entity }
+      end
     end
   end
   
   def show
     @dataset = current_account.datasets.find(params[:id])
+    
+    respond_to do |format|
+      format.json { render json: @dataset }
+    end
   end
   
   def destroy
     @dataset = current_account.datasets.find(params[:id])
     @dataset.destroy
     
+    # respond_to do |format|
+    #   format.html { redirect_to(datasets_url) }
+    # end
+    
     respond_to do |format|
-      format.html { redirect_to(datasets_url) }
+      format.json { render json: nil, status: :ok }
     end
   end
 end
