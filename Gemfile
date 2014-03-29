@@ -53,7 +53,7 @@ group :production do
 end
 
 # Server
-gem 'thin'
+gem 'unicorn'
 
 # Html5 for Rails - https://github.com/sporkd/html5-rails
 group :assets do
@@ -83,3 +83,9 @@ end
 
 # Mannequin
 gem 'mannequin'
+
+# Rack::Timeout
+gem 'rack-timeout'
+
+# Rails 12factor
+gem 'rails_12factor', group: :production
